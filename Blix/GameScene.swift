@@ -7,38 +7,96 @@
 //
 
 import SpriteKit
+import Foundation
 
+// ********************************************
+// Game Scene class
+// ********************************************
 class GameScene: SKScene {
-    override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
-        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "Hello, World!";
-        myLabel.fontSize = 65;
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
+    
+    var hexgrid: HexGrid
+    var center: CGPoint
+    var tileCenter: CGPoint
+    var h: CGFloat
+    var w: CGFloat
+    
+    // --------------------------------------------
+    // Constructors
+    // --------------------------------------------
+    override init(size: CGSize) {
         
-        self.addChild(myLabel)
+        // Record scene size
+        w = size.width
+        h = size.height
+        
+        center = CGPoint(x: w/2, y: h/2 + 90)
+        tileCenter = CGPoint(x: w/2, y: h/2 + 22.5)
+        
+        hexgrid = HexGrid(position: CGPoint(x:0,y:0), nx: 19, ny: 34, hexSize: 10, spacing: 1)
+        super.init(size: size)
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        /* Called when a touch begins */
-        
-        for touch in (touches as! Set<UITouch>) {
-            let location = touch.locationInNode(self)
-            
-            let sprite = SKSpriteNode(imageNamed:"Spaceship")
-            
-            sprite.xScale = 0.5
-            sprite.yScale = 0.5
-            sprite.position = location
-            
-            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-            
-            sprite.runAction(SKAction.repeatActionForever(action))
-            
-            self.addChild(sprite)
-        }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-   
+
+
+    // --------------------------------------------
+    // When you reach the view
+    // --------------------------------------------
+    override func didMoveToView(view: SKView) {
+        /* Setup your scene here */
+        
+        // Set background
+        //let background = SKSpriteNode(imageNamed: "background")
+        //background.position = CGPoint(x: 0, y: 0)
+        //background.anchorPoint = CGPoint(x: 0, y: 0)
+        //addChild(background)
+        backgroundColor = UIColor.whiteColor()
+        
+        addChild(hexgrid.node)
+        
+        
+        //
+    }
+    
+    
+    // --------------------------------------------
+    // detect touch
+    // --------------------------------------------
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        var touch = touches.first as! UITouch
+        var touchLocation = touch.locationInNode(self)
+        
+        // Define an action
+        var action = SKAction.scaleBy(2.0, duration: 3.0)
+        hexgrid.node.runAction(SKAction.repeatAction(action, count: 1))
+    }
+    
+    
+    // --------------------------------------------
+    // follow touch
+    // --------------------------------------------
+    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+
+        var touch = touches.first as! UITouch
+        var touchLocation = touch.locationInNode(self)
+        //var previousLocation = touch.previousLocationInNode(self)
+    }
+    
+    
+    // --------------------------------------------
+    // detect end ot touch
+    // --------------------------------------------
+    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+        var touch = touches.first as! UITouch
+        var touchLocation = touch.locationInNode(self)
+    }
+    
+    
+    // --------------------------------------------
+    // update function
+    // --------------------------------------------
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
     }
