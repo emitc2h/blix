@@ -9,6 +9,10 @@
 import Foundation
 import SpriteKit
 
+// Constants
+let cos30 = cos(M_PI/6)
+let sin30 = sin(M_PI/6)
+
 // Add 2D vectors
 func + (left: CGPoint, right: CGPoint) -> CGPoint {
     return CGPoint(x: left.x + right.x, y: left.y + right.y)

@@ -17,6 +17,8 @@
 		5E2E425C1AF69A2A0074F9FB /* BlixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2E425B1AF69A2A0074F9FB /* BlixTests.swift */; };
 		5E2E42661AF69B0E0074F9FB /* HexSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2E42651AF69B0E0074F9FB /* HexSlot.swift */; };
 		5E2E42681AF6B94E0074F9FB /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2E42671AF6B94E0074F9FB /* Utilities.swift */; };
+		5E460F4E1B051DAC0035A27E /* Hexagon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E460F4D1B051DAC0035A27E /* Hexagon.swift */; };
+		5E460F501B0522A30035A27E /* Lattice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E460F4F1B0522A30035A27E /* Lattice.swift */; };
 		5EDABFFB1AFBF96A00F303F8 /* HexGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDABFFA1AFBF96A00F303F8 /* HexGrid.swift */; };
 		5EDABFFD1AFBFAF800F303F8 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDABFFC1AFBFAF800F303F8 /* Array2D.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +48,9 @@
 		5E2E425B1AF69A2A0074F9FB /* BlixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlixTests.swift; sourceTree = "<group>"; };
 		5E2E42651AF69B0E0074F9FB /* HexSlot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexSlot.swift; sourceTree = "<group>"; };
 		5E2E42671AF6B94E0074F9FB /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		5E460F4D1B051DAC0035A27E /* Hexagon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Hexagon.swift; path = ../Hexagon.swift; sourceTree = "<group>"; };
+		5E460F4F1B0522A30035A27E /* Lattice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lattice.swift; sourceTree = "<group>"; };
+		5EA8A18C1B077F9500B81F93 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		5EDABFFA1AFBF96A00F303F8 /* HexGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexGrid.swift; sourceTree = "<group>"; };
 		5EDABFFC1AFBFAF800F303F8 /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +97,9 @@
 				5E2E42411AF69A2A0074F9FB /* AppDelegate.swift */,
 				5E2E42451AF69A2A0074F9FB /* GameScene.swift */,
 				5E2E42671AF6B94E0074F9FB /* Utilities.swift */,
+				5EA8A18C1B077F9500B81F93 /* MyPlayground.playground */,
+				5E460F4F1B0522A30035A27E /* Lattice.swift */,
+				5E460F4D1B051DAC0035A27E /* Hexagon.swift */,
 				5E2E42651AF69B0E0074F9FB /* HexSlot.swift */,
 				5EDABFFA1AFBF96A00F303F8 /* HexGrid.swift */,
 				5EDABFFC1AFBFAF800F303F8 /* Array2D.swift */,
@@ -232,7 +240,9 @@
 			files = (
 				5E2E42461AF69A2A0074F9FB /* GameScene.swift in Sources */,
 				5E2E42481AF69A2A0074F9FB /* GameViewController.swift in Sources */,
+				5E460F4E1B051DAC0035A27E /* Hexagon.swift in Sources */,
 				5E2E42421AF69A2A0074F9FB /* AppDelegate.swift in Sources */,
+				5E460F501B0522A30035A27E /* Lattice.swift in Sources */,
 				5EDABFFB1AFBF96A00F303F8 /* HexGrid.swift in Sources */,
 				5E2E42681AF6B94E0074F9FB /* Utilities.swift in Sources */,
 				5EDABFFD1AFBFAF800F303F8 /* Array2D.swift in Sources */,

@@ -10,9 +10,6 @@
 import Foundation
 import SpriteKit
 
-let cos30 = cos(M_PI/6)
-let sin30 = sin(M_PI/6)
-
 // ************************************************
 // HexSlot : A slot for a hexagonal tile
 // ************************************************
@@ -36,7 +33,7 @@ class HexSlot {
         self.side = side - inset
         self.tex = SKTexture(imageNamed: "hexagon_mask")
         
-        self.color = UIColor.blueColor()
+        self.color = UIColor.blackColor()
         self.node = SKSpriteNode(texture: self.tex, color: self.color, size: CGSize(width: 2*cos30*self.side, height: 2*self.side))
         self.node.colorBlendFactor = CGFloat(1.0)
         self.node.position = position

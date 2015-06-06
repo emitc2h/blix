@@ -14,7 +14,7 @@ import Foundation
 // ********************************************
 class GameScene: SKScene {
     
-    var hexgrid: HexGrid
+    var lattice: Lattice
     var center: CGPoint
     var tileCenter: CGPoint
     var h: CGFloat
@@ -32,7 +32,7 @@ class GameScene: SKScene {
         center = CGPoint(x: w/2, y: h/2 + 90)
         tileCenter = CGPoint(x: w/2, y: h/2 + 22.5)
         
-        hexgrid = HexGrid(position: CGPoint(x:0,y:0), nx: 19, ny: 34, hexSize: 10, spacing: 1)
+        lattice = Lattice(position: CGPoint(x:0,y:0), nx: 19, ny: 34, hexSize: 10, spacing: 1)
         super.init(size: size)
     }
     
@@ -54,7 +54,7 @@ class GameScene: SKScene {
         //addChild(background)
         backgroundColor = UIColor.whiteColor()
         
-        addChild(hexgrid.node)
+        addChild(lattice)
         
         
         //
@@ -65,12 +65,10 @@ class GameScene: SKScene {
     // detect touch
     // --------------------------------------------
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+
+        // turn hexagons blue
         var touch = touches.first as! UITouch
-        var touchLocation = touch.locationInNode(self)
-        
-        // Define an action
-        var action = SKAction.scaleBy(2.0, duration: 3.0)
-        hexgrid.node.runAction(SKAction.repeatAction(action, count: 1))
+        let positionInScene = touch.locationInNode(self)
     }
     
     
@@ -78,10 +76,7 @@ class GameScene: SKScene {
     // follow touch
     // --------------------------------------------
     override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
-
-        var touch = touches.first as! UITouch
-        var touchLocation = touch.locationInNode(self)
-        //var previousLocation = touch.previousLocationInNode(self)
+        
     }
     
     
@@ -89,8 +84,7 @@ class GameScene: SKScene {
     // detect end ot touch
     // --------------------------------------------
     override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
-        var touch = touches.first as! UITouch
-        var touchLocation = touch.locationInNode(self)
+        
     }
     
     
@@ -99,5 +93,6 @@ class GameScene: SKScene {
     // --------------------------------------------
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
+        self.lattice.update(currentTime)
     }
 }
