@@ -20,6 +20,8 @@
 		5EAF02051B3C466900723DC5 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF02041B3C466900723DC5 /* Tile.swift */; };
 		5EDABFFB1AFBF96A00F303F8 /* HexGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDABFFA1AFBF96A00F303F8 /* HexGrid.swift */; };
 		5EDABFFD1AFBFAF800F303F8 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDABFFC1AFBFAF800F303F8 /* Array2D.swift */; };
+		5EE677331B3F2B8100B6F6C0 /* Slot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE677321B3F2B8100B6F6C0 /* Slot.swift */; };
+		5EE677351B3F37E400B6F6C0 /* Lattice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE677341B3F37E400B6F6C0 /* Lattice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		5EAF02041B3C466900723DC5 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tile.swift; path = ../Tile.swift; sourceTree = "<group>"; };
 		5EDABFFA1AFBF96A00F303F8 /* HexGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexGrid.swift; sourceTree = "<group>"; };
 		5EDABFFC1AFBFAF800F303F8 /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
+		5EE677321B3F2B8100B6F6C0 /* Slot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slot.swift; sourceTree = "<group>"; };
+		5EE677341B3F37E400B6F6C0 /* Lattice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lattice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				5EAF02041B3C466900723DC5 /* Tile.swift */,
+				5EE677341B3F37E400B6F6C0 /* Lattice.swift */,
+				5EE677321B3F2B8100B6F6C0 /* Slot.swift */,
 				5E2E42411AF69A2A0074F9FB /* AppDelegate.swift */,
 				5E2E42451AF69A2A0074F9FB /* GameScene.swift */,
 				5E2E42671AF6B94E0074F9FB /* Utilities.swift */,
@@ -235,8 +241,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E2E42461AF69A2A0074F9FB /* GameScene.swift in Sources */,
+				5EE677351B3F37E400B6F6C0 /* Lattice.swift in Sources */,
 				5E2E42481AF69A2A0074F9FB /* GameViewController.swift in Sources */,
 				5E2E42421AF69A2A0074F9FB /* AppDelegate.swift in Sources */,
+				5EE677331B3F2B8100B6F6C0 /* Slot.swift in Sources */,
 				5EDABFFB1AFBF96A00F303F8 /* HexGrid.swift in Sources */,
 				5E2E42681AF6B94E0074F9FB /* Utilities.swift in Sources */,
 				5EDABFFD1AFBFAF800F303F8 /* Array2D.swift in Sources */,

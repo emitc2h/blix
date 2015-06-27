@@ -64,6 +64,14 @@ class Tile : SKNode {
     let rotationNode: SKNode
     let spriteNode: SKSpriteNode
     
+    var slot: Slot! {
+        didSet {
+            position = slot.position
+        }
+    }
+    
+    var destinationIndexPair: indexPair!
+    
     //State
     var parity: Parity = .even {
         didSet {
@@ -84,7 +92,7 @@ class Tile : SKNode {
     // ------------------------------------------------
     // *** Designated Initializer
     // ------------------------------------------------
-    init(imageNamed: String, position: CGPoint) {
+    init(imageNamed: String) {
         
         // Initialize nodes
         spriteNode   = SKSpriteNode(imageNamed: imageNamed)
@@ -104,15 +112,14 @@ class Tile : SKNode {
         spriteNode.name = "spriteNode:tile"
         
         // rotationNode attributes
-        rotationNode.position = CGPoint(x: 0.0, y: spriteNode.size.height/2)
+        rotationNode.position = CGPoint(x: 0.0, y: spriteNode.size.width/2)
         rotationNode.name = "rotationNode:tile"
         
         // scaleNode attributes
-        scaleNode.position = CGPoint(x: 0.0, y: -spriteNode.size.height/2)
+        scaleNode.position = CGPoint(x: 0.0, y: -spriteNode.size.width/2)
         scaleNode.name = "scaleNode:tile"
         
         // positionNode attributes
-        self.position = position
         self.name = "tile"
     }
 
@@ -129,6 +136,9 @@ class Tile : SKNode {
     // *** Flip the tile
     // ------------------------------------------------
     func flip(touchPosition: CGPoint) {
+        
+        destinationIndexPair = destination(slot.indices, self.position, touchPosition)
+        println("x: \(destinationIndexPair.x), y: \(destinationIndexPair.y), flipping: \(flipped)")
         
         rotationNode.zRotation = hexagonSideToBottomFromTouches(self.position, touchPosition)
         
@@ -156,7 +166,12 @@ class Tile : SKNode {
     // ------------------------------------------------
     // *** execute the flip
     // ------------------------------------------------
-    func executeFlip() {
+    func executeFlip(lattice: Lattice) {
+        if flipped {
+            self.slot = lattice.getSlot(destinationIndexPair)
+        }
+        
+        destinationIndexPair = self.slot.indices
         spriteNode.colorBlendFactor = 0.0
         rotationNode.zRotation = 0.0
         scaleNode.zRotation = 0.0
@@ -164,6 +179,7 @@ class Tile : SKNode {
         
         scaleNode.xScale = 1.0
         scaleNode.yScale = 1.0
+        flipped = false
         
     }
     

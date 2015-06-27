@@ -19,6 +19,7 @@ class GameScene: SKScene {
     var initialTouchPosition: CGPoint!
     var currentTouchPosition: CGPoint!
     var finalTouchPosition: CGPoint!
+    var hexLattice: Lattice!
     
     // --------------------------------------------
     // When you reach the view
@@ -27,14 +28,13 @@ class GameScene: SKScene {
         /* Setup your scene here */
         initBackground()
         
-        let testTile = Tile(imageNamed: "tile", position: CGPoint(x: size.width/2, y: 0.50 * size.height))
+        hexLattice = Lattice(nRows: 9, background: self)
+        addChild(hexLattice)
+        
+        let testTile = Tile(imageNamed: "tile")
+        testTile.slot = hexLattice.getSlot(indexPair(x:3, y:5))
         addChild(testTile)
-        
-        let testTile2 = Tile(imageNamed: "tile", position: CGPoint(x: size.width/2, y: 0.70 * size.height))
-        addChild(testTile2)
-        
-        let testTile3 = Tile(imageNamed: "tile", position: CGPoint(x: size.width/2, y: 0.30 * size.height))
-        addChild(testTile3)
+
 
     }
     
@@ -57,8 +57,16 @@ class GameScene: SKScene {
     // --------------------------------------------
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
 
+        println("==========================")
+        
         var touch = touches.first as! UITouch
         currentNode = self.nodeAtPoint(touch.locationInNode(self))
+        if let name = currentNode.name {
+            if name == "slot" {
+                let slot = currentNode.parent as! Slot
+                slot.state.next()
+            }
+        }
     }
     
     
@@ -72,9 +80,8 @@ class GameScene: SKScene {
         
         if let name = currentNode.name {
             if name == "spriteNode:tile" {
-                var testTile = ((currentNode.parent!).parent!).parent as! Tile
+                let testTile = ((currentNode.parent!).parent!).parent as! Tile
                 testTile.flip(currentTouchPosition)
-                println("flipped: \(testTile.flipped)")
             }
         }
         
@@ -91,10 +98,8 @@ class GameScene: SKScene {
         
         if let name = currentNode.name {
             if name == "spriteNode:tile" {
-                println("Touched the tile")
-                
-                var testTile = ((currentNode.parent!).parent!).parent as! Tile
-                testTile.executeFlip()
+                let testTile = ((currentNode.parent!).parent!).parent as! Tile
+                testTile.executeFlip(hexLattice)
             }
         }
         

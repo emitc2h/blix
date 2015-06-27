@@ -70,7 +70,36 @@ func hexagonSideFromTouches (initialTouch: CGPoint, finalTouch: CGPoint) -> Int 
 
 
 // --------------------------------------------------------
+func destination(initial: indexPair, initialTouch: CGPoint, finalTouch: CGPoint) -> indexPair {
+    
+    let side = hexagonSideFromTouches (initialTouch, finalTouch)
+    
+    let correction = initial.y % 2
+
+
+    switch side {
+    case 0:
+        return indexPair(x: initial.x + correction, y: initial.y + 1)
+    case 1:
+        return indexPair(x: initial.x + 1, y: initial.y)
+    case 2:
+        return indexPair(x: initial.x + correction, y: initial.y - 1)
+    case 3:
+        return indexPair(x: initial.x - 1 + correction, y: initial.y - 1)
+    case 4:
+        return indexPair(x: initial.x - 1, y: initial.y)
+    case 5:
+        return indexPair(x: initial.x - 1 + correction, y: initial.y + 1)
+    default:
+        return indexPair(x: initial.x, y: initial.y)
+        }
+
+}
+
+
+// --------------------------------------------------------
 func anchorPointFromTouches (initialTouch: CGPoint, finalTouch: CGPoint) -> CGPoint {
+    
     let side = hexagonSideFromTouches (initialTouch, finalTouch)
     
     switch side {
