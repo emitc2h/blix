@@ -15,14 +15,10 @@ import Foundation
 class GameScene: SKScene {
 
     var background: SKSpriteNode!
-    var tile: SKSpriteNode!
-    var tileContainer: SKNode!
-    var tileSuperContainer: SKNode!
+    var currentNode: SKNode!
     var initialTouchPosition: CGPoint!
     var currentTouchPosition: CGPoint!
     var finalTouchPosition: CGPoint!
-    var tileHeight: CGFloat!
-    var tileWidth: CGFloat!
     
     // --------------------------------------------
     // When you reach the view
@@ -30,7 +26,15 @@ class GameScene: SKScene {
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         initBackground()
-        initTile()
+        
+        let testTile = Tile(imageNamed: "tile", position: CGPoint(x: size.width/2, y: 0.50 * size.height))
+        addChild(testTile)
+        
+        let testTile2 = Tile(imageNamed: "tile", position: CGPoint(x: size.width/2, y: 0.70 * size.height))
+        addChild(testTile2)
+        
+        let testTile3 = Tile(imageNamed: "tile", position: CGPoint(x: size.width/2, y: 0.30 * size.height))
+        addChild(testTile3)
 
     }
     
@@ -49,39 +53,12 @@ class GameScene: SKScene {
     
     
     // --------------------------------------------
-    // initialize tile
-    // --------------------------------------------
-    func initTile() {
-        
-        tile = SKSpriteNode(imageNamed: "tile")
-        tile.anchorPoint = CGPoint(x: 0.5,y: 0.5)
-        tile.blendMode = .Alpha
-        tileHeight = tile.size.height
-        tileWidth  = tile.size.width
-        
-        tileContainer = SKNode()
-        tileContainer.addChild(tile)
-        
-        tileSuperContainer = SKNode()
-        tileSuperContainer.addChild(tileContainer)
-        
-        tileSuperContainer.position = CGPoint(x: size.width/2, y: size.height/2)
-        tileContainer.position = CGPoint(x: 0.0, y: -tileHeight/2)
-        tile.position = CGPoint(x: 0.0, y: tileHeight/2)
-        
-        addChild(tileSuperContainer)
-        
-    }
-    
-    
-    // --------------------------------------------
     // detect touch
     // --------------------------------------------
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
 
         var touch = touches.first as! UITouch
-        initialTouchPosition = CGPoint(x: size.width/2, y: size.height/2) //touch.locationInNode(self)
-        
+        currentNode = self.nodeAtPoint(touch.locationInNode(self))
     }
     
     
@@ -93,23 +70,13 @@ class GameScene: SKScene {
         var touch = touches.first as! UITouch
         currentTouchPosition = touch.locationInNode(self)
         
-        tile.zRotation = hexagonSideToBottom(initialTouchPosition, currentTouchPosition)
-        
-        //let newAnchorPoint = anchorPointFromTouches(initialTouchPosition, currentTouchPosition)
-        //changeAnchorkeepPosition(tile, newAnchorPoint)
-        
-        var y_scale = (tileHeight - (initialTouchPosition - currentTouchPosition).mag() * 2.0) / tileHeight
-        
-        if y_scale < -1.0 {
-            y_scale = -1.0
+        if let name = currentNode.name {
+            if name == "spriteNode:tile" {
+                var testTile = ((currentNode.parent!).parent!).parent as! Tile
+                testTile.flip(currentTouchPosition)
+                println("flipped: \(testTile.flipped)")
+            }
         }
-        
-        tile.color = UIColor.blackColor()
-        tile.colorBlendFactor = 1.0 - fabs(y_scale)
-        
-        tileContainer.yScale = y_scale
-        
-        tileSuperContainer.zRotation = -tile.zRotation
         
     }
     
@@ -122,15 +89,14 @@ class GameScene: SKScene {
         var touch = touches.first as! UITouch
         finalTouchPosition = touch.locationInNode(self)
         
-        tile.colorBlendFactor = 0.0
-        
-        tile.zRotation = 0.0
-        tileContainer.zRotation = 0.0
-        tileSuperContainer.zRotation = 0.0
-        //changeAnchorkeepPosition(tile, CGPoint(x:0.5, y:0.5))
-        
-        tileContainer.yScale = 1.0
-        tileContainer.xScale = 1.0
+        if let name = currentNode.name {
+            if name == "spriteNode:tile" {
+                println("Touched the tile")
+                
+                var testTile = ((currentNode.parent!).parent!).parent as! Tile
+                testTile.executeFlip()
+            }
+        }
         
     }
     

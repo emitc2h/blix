@@ -102,7 +102,7 @@ func angleFromTouches (initialTouch: CGPoint, finalTouch: CGPoint) -> CGFloat {
 
 
 // --------------------------------------------------------
-func hexagonSideToBottom (initialTouch: CGPoint, finalTouch: CGPoint) -> CGFloat {
+func hexagonSideToBottomFromTouches (initialTouch: CGPoint, finalTouch: CGPoint) -> CGFloat {
     
     let side = hexagonSideFromTouches (initialTouch, finalTouch)
     
@@ -127,25 +127,48 @@ func hexagonSideToBottom (initialTouch: CGPoint, finalTouch: CGPoint) -> CGFloat
 
 
 // --------------------------------------------------------
-func changeAnchorkeepPosition (node: SKSpriteNode, newAnchorPoint: CGPoint) {
+func hexagonSideToBottom (side: Int) -> CGFloat {
     
-    let dx = node.size.width * (newAnchorPoint.x - node.anchorPoint.x)
-    let dy = node.size.height * (newAnchorPoint.y - node.anchorPoint.y)
+    switch side {
+    case 5:
+        return CGFloat(5  * M_PI/6)
+    case 4:
+        return CGFloat(3  * M_PI/6)
+    case 3:
+        return CGFloat(1  * M_PI/6)
+    case 2:
+        return CGFloat(11 * M_PI/6)
+    case 1:
+        return CGFloat(9  * M_PI/6)
+    case 0:
+        return CGFloat(7  * M_PI/6)
+    default:
+        return CGFloat()
+    }
     
-    let delta = CGPoint(x: dx, y: dy)
-    
-    node.anchorPoint = newAnchorPoint
-    node.position = node.position + delta
 }
 
-// --------------------------------------------------------
-
 
 // --------------------------------------------------------
-func rotateAboutCenter (node: SKSpriteNode, angle: CGFloat) {
+func hexagonCornerToBottom (side: Int) -> CGFloat {
     
-    let currentAnchorPoint = node.anchorPoint
-    let center = CGPoint(x: 0.5, y: 0.5)
+    switch side {
+    case 5:
+        return CGFloat(5  * M_PI/3)
+    case 4:
+        return CGFloat(4  * M_PI/3)
+    case 3:
+        return CGFloat(M_PI)
+    case 2:
+        return CGFloat(2 * M_PI/3)
+    case 1:
+        return CGFloat(M_PI/3)
+    case 0:
+        return CGFloat(0)
+    default:
+        return CGFloat()
+    }
+    
 }
 
 
