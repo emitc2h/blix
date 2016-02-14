@@ -137,10 +137,10 @@ class Tile : SKNode {
     // ------------------------------------------------
     func flip(touchPosition: CGPoint) {
         
-        destinationIndexPair = destination(slot.indices, self.position, touchPosition)
-        println("x: \(destinationIndexPair.x), y: \(destinationIndexPair.y), flipping: \(flipped)")
+        let side = hexagonSideFromTouches(self.position, touchPosition)
         
-        rotationNode.zRotation = hexagonSideToBottomFromTouches(self.position, touchPosition)
+        destinationIndexPair = destination(slot.indices, side)
+        rotationNode.zRotation = hexagonSideToBottomFromTouches(side)
         
         var y_scale = (spriteNode.size.height - (self.position - touchPosition).mag() * 2.0) / spriteNode.size.height
         

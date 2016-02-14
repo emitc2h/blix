@@ -98,7 +98,7 @@ class Slot : SKNode {
         super.init()
         self.position = position
         addChild(hexagonNode)
-        addChild(label)
+        //addChild(label)
         
         
     }

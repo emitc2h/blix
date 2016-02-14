@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E222E791AF960BF00ACC222 /* HexTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E222E781AF960BF00ACC222 /* HexTile.swift */; };
 		5E2E42421AF69A2A0074F9FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2E42411AF69A2A0074F9FB /* AppDelegate.swift */; };
 		5E2E42461AF69A2A0074F9FB /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2E42451AF69A2A0074F9FB /* GameScene.swift */; };
 		5E2E42481AF69A2A0074F9FB /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2E42471AF69A2A0074F9FB /* GameViewController.swift */; };
@@ -15,10 +14,8 @@
 		5E2E424D1AF69A2A0074F9FB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E2E424C1AF69A2A0074F9FB /* Images.xcassets */; };
 		5E2E42501AF69A2A0074F9FB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E2E424E1AF69A2A0074F9FB /* LaunchScreen.xib */; };
 		5E2E425C1AF69A2A0074F9FB /* BlixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2E425B1AF69A2A0074F9FB /* BlixTests.swift */; };
-		5E2E42661AF69B0E0074F9FB /* HexSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2E42651AF69B0E0074F9FB /* HexSlot.swift */; };
 		5E2E42681AF6B94E0074F9FB /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2E42671AF6B94E0074F9FB /* Utilities.swift */; };
 		5EAF02051B3C466900723DC5 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF02041B3C466900723DC5 /* Tile.swift */; };
-		5EDABFFB1AFBF96A00F303F8 /* HexGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDABFFA1AFBF96A00F303F8 /* HexGrid.swift */; };
 		5EDABFFD1AFBFAF800F303F8 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDABFFC1AFBFAF800F303F8 /* Array2D.swift */; };
 		5EE677331B3F2B8100B6F6C0 /* Slot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE677321B3F2B8100B6F6C0 /* Slot.swift */; };
 		5EE677351B3F37E400B6F6C0 /* Lattice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE677341B3F37E400B6F6C0 /* Lattice.swift */; };
@@ -35,7 +32,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5E222E781AF960BF00ACC222 /* HexTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexTile.swift; sourceTree = "<group>"; };
 		5E2E423C1AF69A2A0074F9FB /* Blix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E2E42401AF69A2A0074F9FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E2E42411AF69A2A0074F9FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,10 +43,8 @@
 		5E2E42551AF69A2A0074F9FB /* BlixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E2E425A1AF69A2A0074F9FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E2E425B1AF69A2A0074F9FB /* BlixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlixTests.swift; sourceTree = "<group>"; };
-		5E2E42651AF69B0E0074F9FB /* HexSlot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexSlot.swift; sourceTree = "<group>"; };
 		5E2E42671AF6B94E0074F9FB /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		5EAF02041B3C466900723DC5 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tile.swift; path = ../Tile.swift; sourceTree = "<group>"; };
-		5EDABFFA1AFBF96A00F303F8 /* HexGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexGrid.swift; sourceTree = "<group>"; };
 		5EDABFFC1AFBFAF800F303F8 /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
 		5EE677321B3F2B8100B6F6C0 /* Slot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slot.swift; sourceTree = "<group>"; };
 		5EE677341B3F37E400B6F6C0 /* Lattice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lattice.swift; sourceTree = "<group>"; };
@@ -101,10 +95,7 @@
 				5E2E42411AF69A2A0074F9FB /* AppDelegate.swift */,
 				5E2E42451AF69A2A0074F9FB /* GameScene.swift */,
 				5E2E42671AF6B94E0074F9FB /* Utilities.swift */,
-				5E2E42651AF69B0E0074F9FB /* HexSlot.swift */,
-				5EDABFFA1AFBF96A00F303F8 /* HexGrid.swift */,
 				5EDABFFC1AFBFAF800F303F8 /* Array2D.swift */,
-				5E222E781AF960BF00ACC222 /* HexTile.swift */,
 				5E2E42471AF69A2A0074F9FB /* GameViewController.swift */,
 				5E2E42491AF69A2A0074F9FB /* Main.storyboard */,
 				5E2E424C1AF69A2A0074F9FB /* Images.xcassets */,
@@ -245,12 +236,9 @@
 				5E2E42481AF69A2A0074F9FB /* GameViewController.swift in Sources */,
 				5E2E42421AF69A2A0074F9FB /* AppDelegate.swift in Sources */,
 				5EE677331B3F2B8100B6F6C0 /* Slot.swift in Sources */,
-				5EDABFFB1AFBF96A00F303F8 /* HexGrid.swift in Sources */,
 				5E2E42681AF6B94E0074F9FB /* Utilities.swift in Sources */,
 				5EDABFFD1AFBFAF800F303F8 /* Array2D.swift in Sources */,
 				5EAF02051B3C466900723DC5 /* Tile.swift in Sources */,
-				5E2E42661AF69B0E0074F9FB /* HexSlot.swift in Sources */,
-				5E222E791AF960BF00ACC222 /* HexTile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

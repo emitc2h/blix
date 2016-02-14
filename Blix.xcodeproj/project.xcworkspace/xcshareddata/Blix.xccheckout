@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>45E520BA-4987-44BA-B307-44F7A21018DF</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Blix</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F8FE9850BD4051C71EAC41E912EA5B117B659EE9</key>
+		<string>bitbucket.org:emitc2h/blix.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Blix.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F8FE9850BD4051C71EAC41E912EA5B117B659EE9</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>bitbucket.org:emitc2h/blix.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F8FE9850BD4051C71EAC41E912EA5B117B659EE9</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F8FE9850BD4051C71EAC41E912EA5B117B659EE9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Blix</string>
+		</dict>
+	</array>
+</dict>
+</plist>
